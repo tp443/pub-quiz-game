@@ -1,0 +1,168 @@
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="cs5003_pratical1.css">
+  <script src="cs5003_pratical1.js"></script>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+  <div>
+    <header> The Pub Challange</header>
+    <aside> <b> Please enter your name: </b>
+      <p>
+        <form>
+          <input id="name" value="First Name" </input>
+          <input id="surname" value="Surname" </input>
+        </form>
+        <p>
+          <div class="dropdown">
+            <label for="categorySelection">Category: </label>
+          <select id="selectCAtegory" autocomplete="off">
+                            <option value="8">Any Category</option>
+                            <option value="9">General Knowledge</option>
+                            <option value="10">Entertainment: Books</option>
+                            <option value="11">Entertainment: Film</option>
+                            <option value="12">Entertainment: Music</option>>
+                            <option value="21">Sports</option>
+                            <option value="22">Geography</option>
+                            <option value="23">History</option>
+                          </select>
+                        </div>
+          <div class="dropdown">
+            <label for="difficultySelection">Difficulty: </label>
+            <select id="selectDifficulty">
+              <option value ="easy">Easy</option>
+              <option value ="medium">Medium</option>
+              <option value ="hard">Hard</option>
+            </select>
+
+          </div>
+          <p>
+            <button onclick="startQuiz()" id='startButton'>Click to Start</button>
+    </aside>
+
+    <div id="mainArea">
+      <div class="questionZone">
+        <span id="timer"></span>
+        <p id="visualTimer"> </p>
+        <section id="question"> This is the question </section>
+        <div id="options">
+          <section class="option" id="firstOption"> First Answer </section>
+          <section class="option" id="secondOption"> Second Answer </section>
+          <section class="option" id="thirdOption"> Third Answer </section>
+          <section class="option" id="fourthOption"> Fourth Answer </section>
+          <p>
+        </div>
+        <div>
+          <button id="5050"> 50/50 Lifeline</button>
+          <button id="30"> Add 30s </button>
+          <button id="askAudience"> Ask The Audience </button>
+          <p>
+            <button onclick="nextQu()" id="nextQu"> Next Question </button> </p>
+          <!-- 3 is used to signify the user cashed out in the function end game-->
+          <button onclick="endGame(3)" id="cashOut"> Cash Out </button> </p>
+          <!-- 4 is used to signify the user cashed out in the function end game-->
+          <button onclick="endGame(4)" id="quit"> Quit </button> </p>
+        </div>
+
+        <div id="progressBar">
+          <section class="progressPoint" id="Q1"> Q1 </section>
+          <section class="progressPoint" id="Q2"> Q2 </section>
+          <section class="progressPoint" id="Q3"> Q3 </section>
+          <section class="progressPoint" id="Q4"> Q4 </section>
+          <section class="progressPoint" id="Q5"> Q5 </section>
+          <section class="progressPoint" id="Q6"> Q6 </section>
+          <section class="progressPoint" id="Q7"> Q7 </section>
+          <section class="progressPoint" id="Q8"> Q8</section>
+          <section class="progressPoint" id="Q9"> Q9 </section>
+          <section class="progressPoint" id="Q10"> Q10</section>
+        </div>
+
+        <div id="results">
+          <ul>
+            <li id="prizeMoney">Prize Money: £0</li>
+            <li id="bank">Bank: £0</li>
+            <li id="lives">Lives: 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="audienceParticipation">
+      <p id="heading0">Option 1</p>
+      <div class="container">
+        <div class="aud zero">Option 1</div>
+      </div>
+
+      <p id="heading1">Option 2</p>
+      <div class="container">
+        <div class="aud one">Option 2</div>
+      </div>
+
+      <p id="heading2">Option 3</p>
+      <div class="container">
+        <div class="aud two">Option 3</div>
+      </div>
+
+      <p id="heading3">Option 4</p>
+      <div class="container">
+        <div class="aud three">Option 4</div>
+      </div>
+    </div>
+
+    <div id="endGame">
+      <p> END OF GAME!!!!
+        <p id="commiserations"> Game over</p>
+        <p id="finalPrize"> Your total prize is:£ </p>
+        <p>
+          <p>
+            <p> Play again to win more money! </p>
+            <button onclick="restart()"> Click to try again</button>
+            <p>
+    </div>
+
+
+
+    <div id="table">
+      <center>
+        <p id="tableTitle"><b> Leaderboard</b>
+          <p>
+
+            <p id="leaderboardTable"> Leaderboard</p>
+      </center>
+    </div>
+
+
+
+    <footer>
+      <h1>Instructions</h1> You have <b>10</b> questions to answer
+      <p>
+        You have <b>30s</b> to answer each question
+        <p>
+          <h4> Prize Money per question:</h4>
+            <ul>
+              <li>Easy: £20</li>
+              <li>Medium: £30</li>
+              <li>Difficult: £40</li>
+            </ul>
+          <p>
+            Can cash-out at any point.
+            <p>Checkpoints (red boxes) available at <b> Question 4</b> and <b>Question 7</b>  which means you will always leave with some money
+              <p>
+                <h4>  Lifelines availble (can only use each one once! Use wisely!): </h4>
+                <ul>
+                  <li>50/50</li>
+                  <li>Add 30s to timer</li>
+                  <li>Ask the audience</li>
+                </ul>
+                <p>
+                  Try and get to the top of the leaderboard! (If you cash out, you will not be put on the board!)</footer>
+  </div>
+</body>
+
+</html>
